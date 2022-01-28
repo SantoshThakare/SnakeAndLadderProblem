@@ -9,7 +9,8 @@ namespace SnakeAndLadderProblem
     public class Snake_and_Laddder
      { public void next ()
      {
-            int NOPLAY = 0;
+            int PlayerPosition = 0;
+           
      }
     }
 }
