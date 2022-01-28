@@ -10,7 +10,7 @@ namespace SnakeAndLadderProblem
      { public void next ()
      {
             int PlayerPosition = 0;
-           
+          
      }
     }
 }
