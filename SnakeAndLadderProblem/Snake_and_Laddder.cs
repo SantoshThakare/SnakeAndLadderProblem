@@ -8,10 +8,11 @@ namespace SnakeAndLadderProblem
 {
     public class Snake_and_Laddder
     {
-        const int NoPlay = 0, Ladder = 1, Snake = 2, Winning_Position = 100;
 
-        int PlayerPosition = 0, count = 0;
-        
+        const int NoPlay = 0, Ladder = 1, Snake = 2;
+
+        int PlayerPosition = 0, count = 0, Winning_Position = 10;
+
         public void Play()
         {
             Console.WriteLine("The Game is Start");
@@ -20,7 +21,8 @@ namespace SnakeAndLadderProblem
 
             while (this.PlayerPosition < Winning_Position)
 
-          {                
+            {
+                
                 int Roll = random.Next(0, 3);
                 switch (Roll)
                 {
@@ -38,23 +40,28 @@ namespace SnakeAndLadderProblem
                     case Snake:
                         if (this.PlayerPosition - DiceRoll >= 0)
                         {
-                            this.PlayerPosition = PlayerPosition  - DiceRoll;
+                            this.PlayerPosition = PlayerPosition - DiceRoll;
                         }
                         else
-                        { 
+                        {
                             PlayerPosition = 0;
-                           
+
                         }
+
                         break;
-                              
+                    default:
+                        break;
+
+                     
                 }
                 count++;
+
                 Console.WriteLine("Player position" + this.PlayerPosition);
 
-
-                Console.WriteLine("Number of times dice was played= : " + count + "\n");
+                Console.WriteLine("Number of time Dice Rolled"+count);
+                
             }
-          
+            
         }
     }
 }
