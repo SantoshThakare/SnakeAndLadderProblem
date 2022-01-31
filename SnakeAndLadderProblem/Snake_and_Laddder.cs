@@ -14,6 +14,7 @@ namespace SnakeAndLadderProblem
         
         public void Play()
         {
+            Console.WriteLine("The Game is Start");
             Random random = new Random();
             int DiceRoll = random.Next(1, 7);
 
@@ -37,7 +38,7 @@ namespace SnakeAndLadderProblem
                     case Snake:
                         if (this.PlayerPosition - DiceRoll >= 0)
                         {
-                            PlayerPosition -= DiceRoll;
+                            this.PlayerPosition = PlayerPosition  - DiceRoll;
                         }
                         else
                         { 
@@ -47,8 +48,8 @@ namespace SnakeAndLadderProblem
                         break;
                                          
                 }
+                Console.WriteLine("Player position" + this.PlayerPosition);
 
-                
 
 
             }
