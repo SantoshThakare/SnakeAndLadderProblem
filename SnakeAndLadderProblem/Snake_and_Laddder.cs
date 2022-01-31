@@ -8,35 +8,50 @@ namespace SnakeAndLadderProblem
 {
     public class Snake_and_Laddder
     {
-        const int NoPlay = 0, Ladder = 1, Snake = 2;
+        const int NoPlay = 0, Ladder = 1, Snake = 2, Winning_Position = 100;
 
         int PlayerPosition = 0;
-        public void Play()
         
-
+        public void Play()
         {
-            Console.WriteLine("The Game Start");
             Random random = new Random();
             int DiceRoll = random.Next(1, 7);
-            Console.WriteLine("The dice outcome is: " + DiceRoll);
-            
+
+            while (this.PlayerPosition < Winning_Position)
+
+          {                
                 int Roll = random.Next(0, 3);
                 switch (Roll)
                 {
                     case NoPlay:
-
+                        Console.WriteLine("Player is not rolled the dice");
                         break;
-                    case Ladder: 
-                        PlayerPosition += DiceRoll;
+                    case Ladder:
+                        if (this.PlayerPosition + DiceRoll <= 100)
+                        {
+
+
+                            PlayerPosition += DiceRoll;
+                        }
                         break;
                     case Snake:
-                        PlayerPosition -= DiceRoll;
+                        if (this.PlayerPosition - DiceRoll >= 0)
+                        {
+                            PlayerPosition -= DiceRoll;
+                        }
+                        else
+                        { 
+                            PlayerPosition = 0;
+                           
+                        }
                         break;
+                                         
                 }
-                Console.WriteLine("Dice is: " + Roll + "\n \n Player position is: " + PlayerPosition);
+
+                
 
 
-            
+            }
         }
     }
 }
