@@ -10,7 +10,7 @@ namespace SnakeAndLadderProblem
     {
         const int NoPlay = 0, Ladder = 1, Snake = 2, Winning_Position = 100;
 
-        int PlayerPosition = 0;
+        int PlayerPosition = 0, count = 0;
         
         public void Play()
         {
@@ -46,13 +46,15 @@ namespace SnakeAndLadderProblem
                            
                         }
                         break;
-                                         
+                              
                 }
+                count++;
                 Console.WriteLine("Player position" + this.PlayerPosition);
 
 
-
+                Console.WriteLine("Number of times dice was played= : " + count + "\n");
             }
+          
         }
     }
 }
